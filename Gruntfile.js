@@ -11,6 +11,17 @@ module.exports = function (grunt) {
                 jshintrc: '.jshintrc'
             }
         },
+        react: {
+            src: {
+                files: [{
+                    expand: true,
+                    cwd: 'public/scripts/react/components-jsx',
+                    src: ['*.js', '**/*.js'],
+                    dest: 'public/scripts/react/components-js',
+                    ext: '.js'
+                }]
+            }
+        },
         uglify: {
           build: {
             files: [{
@@ -43,40 +54,6 @@ module.exports = function (grunt) {
                     ext: '.min.css'
                 }]
             }
-        },
-        concurrent: {
-            dev: {
-                tasks: ['watch'],
-                options: {
-                    logConcurrentOutput: true
-                }
-            }
-        },
-        watch: {
-            all: {
-                files: ['public/**/*', 'views/**', '!**/node_modules/**', '!public/scripts/lib/**/*', '!**/*.min.*'],
-                options: {
-                    livereload: 3006
-                }
-            },
-            gruntfile: {
-                files: 'Gruntfile.js',
-                tasks: 'jshint:gruntfile'
-            },
-            scripts: {
-                files: 'public/javascript/**/**/*.js',
-                tasks: ['jshint:client', 'uglify']
-            },
-            server: {
-                files: ['.rebooted'],
-                options: {
-                    livereload: true
-                }
-            } ,
-            less: {
-                files: ['public/styles/less/*.less'],
-                tasks: ['less', 'cssmin', 'concat:css']
-            }
         }
     };
 
@@ -84,5 +61,5 @@ module.exports = function (grunt) {
 
     // Load the tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-    grunt.registerTask('default', ['jshint', 'less', 'cssmin','concurrent']);
+    grunt.registerTask('default', ['jshint', 'react','uglify','less', 'cssmin']);
 };

@@ -53,6 +53,7 @@ html[xmlns] .clearfix {
   -webkit-box-orient: vertical;
   overflow: hidden;
   line-height: 22px;
+  height: 44px;
 }
 .followers-panel .business-card .media-body .followers {
   font-size: 15px;
@@ -85,6 +86,7 @@ html[xmlns] .clearfix {
   border-color: #ec0180;
   background: #ec0180;
   color: #ffffff;
+  padding: 10px 25px;
 }
 button:focus,
 button:active {

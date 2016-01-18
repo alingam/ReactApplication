@@ -21,7 +21,7 @@ var SingleInfluencer = React.createClass({
                         <div className="followers">{this.props.inf.followersCount+" followers"}</div>
                     </div>
                     <div className="media-right">
-                        <button className="btn btn-primary btn-lg" id={"btn-"+this.props.inf.id} data-available="enable" onClick={this.handleClick}>follow</button>
+                        <button className="btn btn-primary btn-lg" id={"btn-"+this.props.inf.id} data-available="enable" onClick={this.handleClick}>Follow</button>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,6 @@ var InfluencersList = React.createClass({
 
 var InfluencersComponent = React.createClass({
     getInitialState: function () {
-        this.setState({userId:"00000"})
         return {infList: []};
     },
     handleFollow: function(id,status){
@@ -65,10 +64,8 @@ var InfluencersComponent = React.createClass({
             };
         if(status=="enable"){
             var method="POST";
-            $('#btn-'+id).attr('data-available','disable').addClass("active");
         }else{
             var method="DELETE";
-            $('#btn-'+id).attr('data-available','enable').removeClass("active");
         }
         $.ajax({
             url: "/follows",
@@ -78,9 +75,9 @@ var InfluencersComponent = React.createClass({
             success: function (data, textStatus, jqXHR) {
                 console.log("Influencers list: " + data);
                 if(status=="enable"){
-                    $('#btn-'+id).attr('data-available','disable').addClass("active");
+                    $('#btn-'+id).attr('data-available','disable').addClass("active").text("Following");
                 }else{
-                    $('#btn-'+id).attr('data-available','enable').removeClass("active");
+                    $('#btn-'+id).attr('data-available','enable').removeClass("active").text("Follow");
                 }
             }.bind(this),
             error: function (jqXHR, textStatus, errorThrown) {
@@ -103,6 +100,8 @@ var InfluencersComponent = React.createClass({
         });
     },
     componentDidMount: function () {
+        //Hard coding the user id who logged in
+        this.setState({userId:"00000"})
         this.getInfluencersList();
     },
     render: function () {

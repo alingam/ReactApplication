@@ -10,11 +10,7 @@ node_modules
 
 #other ignore folders and files
 public/scripts/lib
+public/scripts/react/components-js
+public/scripts/react/components-min
+public/styles/css
 .idea
-
-
-
-
-
-
-
