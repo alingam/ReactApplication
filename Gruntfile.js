@@ -1,3 +1,7 @@
+/**
+ * Created by aparnalingam on 1/17/16.
+ */
+
 module.exports = function (grunt) {
     var config = {
         pkg: grunt.file.readJSON('package.json'),
@@ -61,7 +65,7 @@ module.exports = function (grunt) {
             },
             scripts: {
                 files: 'public/javascript/**/**/*.js',
-                tasks: ['jshint:client', 'uglify','react']
+                tasks: ['jshint:client', 'uglify']
             },
             server: {
                 files: ['.rebooted'],
