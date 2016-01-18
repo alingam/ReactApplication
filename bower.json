@@ -1,0 +1,9 @@
+{
+  "name": "ReactApplication",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "console-polyfill": "0.1.2",
+    "jquery": "1.11.2"
+  }
+}
