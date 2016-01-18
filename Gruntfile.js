@@ -84,5 +84,5 @@ module.exports = function (grunt) {
 
     // Load the tasks
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
-    grunt.registerTask('default', ['jshint','uglify', 'less', 'cssmin','concurrent']);
+    grunt.registerTask('default', ['jshint', 'less', 'cssmin','concurrent']);
 };

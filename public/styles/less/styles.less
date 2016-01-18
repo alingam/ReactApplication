@@ -15,3 +15,72 @@ html[xmlns] .clearfix {
 * html .clearfix {
   height: 1%;
 }
+
+.no-side-padding{
+  padding-left:0px;
+  padding-right: 0px;
+}
+
+.followers-panel{
+  border: 1px solid @list-background;
+  background: @list-background;
+  border-radius:@border-radius;
+  h5{
+    color:#333;
+  }
+  h4{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    color: #666;
+    font-size:16px;
+  }
+  .business-card{
+    margin: 10px auto;
+    .media-body{
+      padding: 0px 16px;
+      .name{
+        color:@gray-color;
+        font-size:16px;
+        font-weight:500;
+      }
+      .bio {
+        color: @gray-color;
+        font-size: 15px;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        line-height: 22px;
+      }
+      .followers {
+        font-size: 15px;
+        color:@gray-lighter-color;
+        line-height: 22px;
+      }
+    }
+    .profile-img {
+      height: 80px;
+      background: @white-color;
+    }
+  }
+
+}
+
+//buttons
+.btn-primary,.btn-primary:hover,.btn-primary.hover,.btn-primary.focus, .btn-primary:focus{
+  border-radius: 30px;
+  border-color: @theme-color;
+  background: @white-color;
+  color: @theme-color;
+  padding:10px 35px;
+}
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary.active:hover,
+.btn-primary.focus:active, .btn-primary:active:focus,
+.btn-primary:active:hover,.btn-primary:active,.btn-primary.active{
+  border-color: @theme-color;
+  background: @theme-color;
+  color: @white-color;
+}
+button:focus,button:active{outline:0 !important;}
+
