@@ -13,7 +13,9 @@ Install your dependencies:
 ```sh
 $ npm install 
 
-runs bower install also. If not Please run: bower install
+runs bower install also. If not Please run: 
+
+$ bower install
 ```
 
 Run grunt
